@@ -9,9 +9,20 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 
+import { RouterModule } from '@angular/router';
+import { NavbarComponent } from './navbar/navbar.component';
+
+const paths: {}[] = [
+  {path: "" , component: HomeComponent},
+  {path: "login" , component: LoginComponent}
+]
+
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, MDBBootstrapModule.forRoot() ],
-  declarations: [ AppComponent, HelloComponent, HomeComponent, LoginComponent ],
+  imports:      [ BrowserModule, 
+                  FormsModule, 
+                  MDBBootstrapModule.forRoot(),
+                  RouterModule.forRoot(paths) ],
+  declarations: [ AppComponent, HelloComponent, HomeComponent, LoginComponent, NavbarComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
